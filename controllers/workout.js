@@ -63,7 +63,7 @@ module.exports.updateWorkout = (req, res)=>{
         if (workout) {
             res.status(200).send({
                 message: "Workout updated successfully",
-                "updateWorkout" :workout
+                "updatedWorkout" :workout
             });
         } else {
             res.status(404).send({message: 'Workout not found'});
@@ -97,10 +97,9 @@ module.exports.completeStatus = (req, res) => {
                 return res.status(404).send({ message: "Workout not found" });
             }
 
-            if (workout.status === "complete") {
+            if (workout.status === "completed") {
                 return res.status(200).send({
                     message: "Workout already completed",
-                    workout
                 });
             }
 
