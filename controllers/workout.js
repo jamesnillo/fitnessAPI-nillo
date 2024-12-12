@@ -24,8 +24,7 @@ module.exports.addWorkout = (req, res) => {
         }else{
             return newWorkout.save()
             .then(result => {
-                res.status(201).send({message: 'Workout successfully added!',
-                result })
+                res.status(201).send(result)
             })
             .catch(error => errorHandler(error, req, res))
         }
